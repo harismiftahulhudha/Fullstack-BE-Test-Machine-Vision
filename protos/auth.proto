@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+service AuthService {
+  rpc CreateUser (User) returns (User) {}
+  rpc GetUserByUsernameOrEmail (RequestLogin) returns (User) {}
+}
+
+message User {
+  string name = 1;
+  string username = 2;
+  string email = 3;
+  string password = 4;
+  optional string photo = 5;
+  optional string createdAt = 6;
+  optional string updatedAt = 7;
+  optional uint64 id = 8;
+}
+
+message RequestLogin {
+  string username = 1;
+  string password = 2;
+}

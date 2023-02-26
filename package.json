@@ -1,0 +1,54 @@
+{
+  "name": "apimachinevision",
+  "version": "1.0.0",
+  "description": "Challenge from Machine Vision",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "_moduleAliases": {
+    "@root": ".",
+    "@src": "src",
+    "@utils": "utils",
+    "@srcUsecases": "src/usecases",
+    "@srcEntities": "src/entities",
+    "@srcInteractors": "src/interactors",
+    "@databasesDao": "databases/dao",
+    "@frameworks": "frameworks"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.0",
+    "@grpc/proto-loader": "^0.7.4",
+    "cloudinary": "^1.30.1",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
+    "hpp": "^0.2.3",
+    "http-proxy-middleware": "^2.0.6",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.1.2",
+    "object-sizeof": "^1.6.3",
+    "sequelize": "^6.28.2",
+    "sharp": "^0.31.2",
+    "slugify": "^1.6.5",
+    "streamifier": "^0.1.1",
+    "unique-slug": "^4.0.0",
+    "validator": "^13.7.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.0"
+  }
+}

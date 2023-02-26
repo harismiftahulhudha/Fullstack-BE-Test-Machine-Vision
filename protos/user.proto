@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+service UserService {
+  rpc CreateUser (User) returns (User) {}
+  rpc GetUserById (RequestUserById) returns (User) {}
+  rpc UpdateUser (RequestUpdateUser) returns (User) {}
+  rpc ChangePasswordUser (RequestChangePasswordUser) returns (User) {}
+}
+
+message User {
+  string name = 1;
+  string username = 2;
+  string email = 3;
+  string password = 4;
+  optional string photo = 5;
+  optional string createdAt = 6;
+  optional string updatedAt = 7;
+  optional uint64 id = 8;
+}
+
+message RequestUserById {
+  uint64 userId = 1;
+}
+
+message RequestUpdateUser {
+  string name = 1;
+  string username = 2;
+  string email = 3;
+  uint64 userId = 4;
+  optional string photo = 5;
+}
+
+message RequestChangePasswordUser {
+  string oldPassword = 1;
+  string newPassword = 2;
+  string confirmNewPassword = 3;
+  uint64 userId = 4;
+}

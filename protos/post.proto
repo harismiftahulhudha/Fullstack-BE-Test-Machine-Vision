@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+service PostService {
+  rpc GetPostById (GetPostByIdRequest) returns (Post) {}
+  rpc CreatePost (Post) returns (ResponseCreatePost) {}
+  rpc UpdatePost (Post) returns (ResponseCreatePost) {}
+  rpc DeletePost (DeletePostRequest) returns (Post) {}
+  rpc GetPostDetail (GetPostByIdRequest) returns (ResponseCreatePost) {}
+  rpc GetListPost (GetListPostRequest) returns (ListPostResponse) {}
+}
+
+message User {
+  string name = 1;
+  string username = 2;
+  string email = 3;
+  string password = 4;
+  optional string photo = 5;
+  optional string createdAt = 6;
+  optional string updatedAt = 7;
+  optional uint64 id = 8;
+}
+
+message Post {
+  uint64 userId = 1;
+  string image = 2;
+  optional uint64 likes = 3;
+  optional string caption = 4;
+  optional string tags = 5;
+  optional string createdAt = 6;
+  optional string updatedAt = 7;
+  optional uint64 id = 8;
+  optional bool isLike = 9;
+}
+
+message GetPostByIdRequest {
+  uint64 id = 1;
+}
+
+message ResponseCreatePost {
+    Post post = 1;
+    User user = 2;
+}
+
+message DeletePostRequest {
+  uint64 id = 1;
+  uint64 userId = 2;
+}
+
+message GetListPostRequest {
+  optional string query = 1;
+  optional uint64 userId = 2;
+}
+
+message ListPostResponse {
+  repeated PostWithUser posts = 1;
+  Pagination pagination = 2;
+}
+
+message PostWithUser {
+  Post post = 1;
+  User user = 2;
+}
+
+message Pagination {
+  uint64 totalAll = 1;
+  uint32 total = 2;
+  uint32 limit = 3;
+  uint32 page = 4;
+}

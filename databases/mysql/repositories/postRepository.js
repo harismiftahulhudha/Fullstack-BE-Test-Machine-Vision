@@ -1,0 +1,13 @@
+const createPost = require('./../usecases/post/createPost')
+const updatePost = require('./../usecases/post/updatePost')
+const getPostById = require('./../usecases/post/getPostById')
+const deletePost = require('./../usecases/post/deletePost')
+const getPostDetail = require('./../usecases/post/getPostDetail')
+const getListPost = require('./../usecases/post/getListPost')
+
+exports.createPost = async (body) => createPost(body)
+exports.updatePost = async (body) => updatePost(body)
+exports.getPostById = async (body) => getPostById(body)
+exports.deletePost = async (body) => deletePost(body)
+exports.getPostDetail = async (body) => getPostDetail(body)
+exports.getListPost = async (body) => getListPost(body)

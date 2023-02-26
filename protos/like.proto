@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+service LikeService {
+  rpc LikePost (LikeRequest) returns (Post) {}
+  rpc UnlikePost (LikeRequest) returns (Post) {}
+}
+
+message Post {
+  uint64 userId = 1;
+  string image = 2;
+  optional uint64 likes = 3;
+  optional string caption = 4;
+  optional string tags = 5;
+  optional string createdAt = 6;
+  optional string updatedAt = 7;
+  optional uint64 id = 8;
+  optional bool isLike = 9;
+}
+
+message LikeRequest {
+  uint64 userId = 1;
+  uint64 postId = 2;
+}
